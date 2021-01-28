@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap');
+
+body {
+    font-family: 'ABeeZee', sans-serif;
+}
+
+header {
+    background-color: #376c7a;
+    color: #f9cb3a;
+    padding: 0.5rem;
+    display: flex;
+}
+
+.header_logo img {
+    max-width: 10rem;
+}
+
+.header_title {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.header_maintitle {
+    font-size: 2rem;
+}
+
+.header_subtitle {
+    font-style: italic;
+}

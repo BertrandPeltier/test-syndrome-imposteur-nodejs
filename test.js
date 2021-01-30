@@ -1,4 +1,4 @@
-require('dotenv').config();
+/*require('dotenv').config();
 
 const { Question, Answer } = require('./app/models');
 
@@ -12,4 +12,7 @@ Question.findAll({
             console.log(`- ${answer.answer_text}`);
         }
     }
-});
+});*/
+
+console.log(Date().toString());
+console.log(Date.now());

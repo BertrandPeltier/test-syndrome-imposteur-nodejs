@@ -1,4 +1,5 @@
 const { Question } = require('../models');
+const Test = require('../models/test');
 
 exports.test = async (req, res) => {
 
@@ -10,13 +11,11 @@ exports.test = async (req, res) => {
     }
     catch {
         console.log(error);
-        res.send('Error'); // Redirect('/') ?
+        res.redirect('/');
     }
-
-    
 }
 
-exports.result = (req, res) => {
+exports.result = async (req, res) => {
 
     const result = {
         score: 0,
@@ -33,8 +32,16 @@ exports.result = (req, res) => {
     if (result.score > 60 && result.score <= 80) {result.reading = 'vous vivez fréquemment l’expérience de sentiment d’imposture.'};
     if (result.score > 80) {result.reading = 'vous vivez intensément l’expérience du sentiment d’imposture.'};
 
-    console.log(result);
+    try {
+        const test = await Test.create({
+            test_date: Date.now(),
+            test_score: result.score
+        });
+        res.render('home', {result});
+    }
 
-    res.render('home', {result});
-
+    catch {
+        console.log(error);
+        res.redirect('/');
+    }
 }

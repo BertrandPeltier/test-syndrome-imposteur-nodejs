@@ -1,6 +1,6 @@
 BEGIN;
 
-DROP TABLE IF EXISTS question, answer;
+DROP TABLE IF EXISTS question, answer, history;
 
 -- --------------------------------
 -- Table "question"
@@ -160,5 +160,15 @@ INSERT INTO question_has_answer(question_id, answer_id) VALUES
 (20, 3),
 (20, 4),
 (20, 5);
+
+-- --------------------------------
+-- Table "test"
+-- --------------------------------
+CREATE TABLE test(
+    id INT NOT NULL AUTO_INCREMENT,
+    test_date DATETIME,
+    test_score INT,
+    PRIMARY KEY (id)
+);
 
 COMMIT;

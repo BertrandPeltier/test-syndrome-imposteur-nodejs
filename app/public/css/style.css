@@ -111,6 +111,7 @@ button:active {
     color: #f9cb3a;
     padding-top: 0.5em;
     padding-bottom: 0.5em;
+    margin-bottom: 1em;
 }
 
 .test-result-content h2 {

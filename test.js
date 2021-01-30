@@ -2,6 +2,7 @@ require('dotenv').config();
 
 const { Question, Answer } = require('./app/models');
 
+
 Question.findAll({
     include: 'answers'
 }).then(questions => {

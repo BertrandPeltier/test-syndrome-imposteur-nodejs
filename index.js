@@ -8,6 +8,8 @@ app.set('views', './app/views');
 
 app.use(express.static('./app/public'));
 
+app.use(express.urlencoded({extended:true}));
+
 const router = require('./app/router');
 app.use(router);
 

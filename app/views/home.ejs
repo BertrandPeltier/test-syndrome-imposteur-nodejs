@@ -1,3 +1,39 @@
 <%- include('partials/header') %>
 
+<% if(!locals.score) { %>
+    <form action="" method="POST" class="test-form">
+
+    <% for(const question of questions) { %>
+
+        <fieldset class="question">
+
+            <legend class="question-test"><%= question.id %> - <%= question.question_text %></legend>
+
+            <div class="answers">
+
+                <% for(const answer of question.answers) { %>
+
+                        <input type="radio" id="question<%= question.id %>_answer<%= answer.id %>" name="question<%= question.id %>" value="<%= answer.answer_value %>">
+                        <label for="question<%= question.id %>_answer<%= answer.id %>"><%= answer.answer_text %></label>
+
+                <% } %>
+
+            </div>
+
+        </fieldset>
+
+    <% } %>
+
+        <div>
+            <button type="submit">Envoyer</button>
+        </div>
+
+    </form>
+
+<% } else { %>
+
+    <p>Votre score <%= score %> </p>
+
+<% } %>
+
 <%- include('partials/footer') %>

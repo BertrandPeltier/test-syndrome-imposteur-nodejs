@@ -1,6 +1,6 @@
 const { Question } = require('../models');
 
-exports.home = async (req, res) => {
+exports.test = async (req, res) => {
 
     try {
         const questions = await Question.findAll({
@@ -18,14 +18,23 @@ exports.home = async (req, res) => {
 
 exports.result = (req, res) => {
 
-    let score = 0;
+    const result = {
+        score: 0,
+        reading: ''
+    };
 
     for(const answer in req.body) {
-        score += Number(req.body[answer]);
+
+        result.score += Number(req.body[answer]);
     }
 
-    req.body = {};
+    if (result.score <= 40) {result.reading = 'Vous vivez faiblement l’expérience du sentiment d’imposture.'};
+    if (result.score > 40 && result.score <= 60) { result.reading = 'Vous vivez modérément l’expérience du sentiment d’imposture.'};
+    if (result.score > 60 && result.score <= 80) {result.reading = 'vous vivez fréquemment l’expérience de sentiment d’imposture.'};
+    if (result.score > 80) {result.reading = 'vous vivez intensément l’expérience du sentiment d’imposture.'};
 
-    res.render('home', {score});
+    console.log(result);
+
+    res.render('home', {result});
 
 }

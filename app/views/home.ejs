@@ -1,9 +1,15 @@
 <%- include('partials/header') %>
 
 <% if(!locals.result) { %>
+    
+    <div id="button-start" class="button-start">
+        <button>Commencer le test</button>
+    </div>
 
-    <form action="" method="POST" class="test-form">
+    <form id="test-form" action="" method="POST" class="test-form hide">
 
+        <p>Pour chaque question, cochez l’affirmation qui vous correspond le mieux. Répondez de la manière la plus intuitive possible.</p>
+        
     <% for(const question of questions) { %>
 
         <fieldset class="question">

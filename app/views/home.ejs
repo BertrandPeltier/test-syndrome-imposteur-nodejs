@@ -19,10 +19,10 @@
             <div class="answers">
 
                 <% for(const answer of question.answers) { %>
-
-                        <input type="radio" id="question<%= question.id %>_answer<%= answer.id %>" name="question<%= question.id %>" value="<%= answer.answer_value %>">
+                    <div>
+                        <input type="radio" id="question<%= question.id %>_answer<%= answer.id %>" name="question<%= question.id %>" value="<%= answer.answer_value %>" required>
                         <label for="question<%= question.id %>_answer<%= answer.id %>"><%= answer.answer_text %></label>
-
+                    </div>
                 <% } %>
 
             </div>

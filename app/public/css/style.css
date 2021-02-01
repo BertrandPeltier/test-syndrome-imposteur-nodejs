@@ -61,6 +61,10 @@ legend {
     font-weight: bold;
 }
 
+.answers {
+    display:flex;
+}
+
 input {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -141,10 +145,42 @@ button:active {
 
 .footer {
     background-color: #376c7a;
+    color: #f9cb3a;
     padding: 0.5em;;
     text-align: center;
     position: fixed;
     bottom: 0;
     width: 100%;
     z-index: 1;
+}
+
+@media screen and (max-width: 500px) {
+    html {
+        font-size: 0.7rem;
+    }
+
+    header {
+        position: static;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    footer {
+        position: relative;
+    }
+
+    main {
+        margin-top :1em;
+        position: static;
+    }
+
+    .answers {
+        display:block;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    html {
+        font-size: 0.4rem;
+    }
 }

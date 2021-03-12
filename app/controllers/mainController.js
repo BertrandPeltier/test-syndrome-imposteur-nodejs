@@ -21,7 +21,8 @@ exports.result = async (req, res) => {
         score: 0,
         reading: ''
     };
-
+    console.log(req.body);
+    
     for(const answer in req.body) {
 
         result.score += Number(req.body[answer]);
